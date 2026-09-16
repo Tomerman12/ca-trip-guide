@@ -213,7 +213,13 @@ details.res[open] > .res-sum::after{transform:rotate(-135deg);}
 .plan-btns .btn span{display:none;}
 @media (min-width:560px){ .plan-btns .btn span{display:inline;} }
 .day-route{margin-top:10px;}
-.btn-route{background:var(--sea); color:#fff; width:100%; justify-content:center; min-height:48px; font-size:.95rem;}
+.btn-route{background:var(--sea); color:#fff; width:100%; justify-content:center;}
+/* .btn is declared further down and overrides single-class rules here (nowrap, height, font-size);
+   the doubled class outranks it so long route labels wrap on phones instead of widening the page */
+.btn.btn-route{min-height:48px; font-size:.95rem; white-space:normal; text-align:center;
+  line-height:1.35; padding:8px 14px;}
+.btn.btn-route > span:first-of-type{min-width:0; white-space:normal;}
+.btn-route svg, .route-n{flex:0 0 auto;}
 .btn-route svg{fill:#fff; width:19px; height:19px;}
 .btn-route:hover{background:var(--sea-deep);}
 .route-n{background:rgb(255 255 255/.25); border-radius:999px; padding:1px 9px; font-size:.8rem; font-weight:800;
