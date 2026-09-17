@@ -728,7 +728,9 @@ html{scroll-behavior:smooth;}
     var tb = document.getElementById('todayBtn');
     tb.hidden = false;
     tb.addEventListener('click', function(){
-      block.scrollIntoView({behavior:'smooth', block:'center'});
+      // 'start' + the .day scroll-margin-top lands the day's header just below the sticky top bar
+      // ('center' pushed the header of a long day off-screen, under the bar)
+      block.scrollIntoView({behavior:'smooth', block:'start'});
     });
   }
 
